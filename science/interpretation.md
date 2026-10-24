@@ -6,7 +6,7 @@ A basis state is unaffected by diagonal dephasing. During a gate, a superpositio
 
 ## What can be inferred from measured dephasing rates
 
-Suppose the common dephasing basis and all pairwise coherence-decay rates are known. Twice those reference rates form the matrix $Q$. The distance $d_Q(s,t)$ gives the leading minimum error for transferring $\lvert s\rangle$ to $\lvert t\rangle$.
+Suppose the common dephasing basis and all pairwise coherence-decay rates are known. Twice those reference rates form the matrix $`Q`$. The distance $`d_Q(s,t)`$ gives the leading minimum error for transferring $`\lvert s\rangle`$ to $`\lvert t\rangle`$.
 
 There are two distinct tests for a proposed improvement.
 
@@ -25,15 +25,15 @@ v_b=(0,1/2),\qquad
 v_e=(0,2),
 ```
 
-where the two coordinates already include the square roots of the reference rates. Then $Q_{ij}=\|v_i-v_j\|^2$.
+where the two coordinates already include the square roots of the reference rates. Then $`Q_{ij}=\|v_i-v_j\|^2`$.
 
-The direct endpoint edge has cost $4$. The route through $b$ has cost $5/4+5/4=5/2$, while the extra state $e$ gives no improvement. The optimal leading transfer error is therefore reduced by 37.5% relative to the direct endpoint rotation at the same $\Omega$.
+The direct endpoint edge has cost $`4`$. The route through $`b`$ has cost $`5/4+5/4=5/2`$, while the extra state $`e`$ gives no improvement. The optimal leading transfer error is therefore reduced by 37.5% relative to the direct endpoint rotation at the same $`\Omega`$.
 
 This example uses two independent dephasing observables and is not restricted to points on a line. The [verification suite](../verification/README.md) compares exact Lindblad propagation, the analytic pulse-product formula, and the predicted leading coefficient. The same route can be used in the forward/back construction to swap the two logical endpoint states.
 
 ## Spectral refinement and the resources it consumes
 
-For one dephasing operator, the shortest path visits intermediate noise eigenvalues in their sorted order. Splitting a fixed span $\Delta$ into $m$ equal gaps gives
+For one dephasing operator, the shortest path visits intermediate noise eigenvalues in their sorted order. Splitting a fixed span $`\Delta`$ into $`m`$ equal gaps gives
 
 ```math
 d_Q=\frac{\gamma\Delta^2}{m}.
@@ -42,26 +42,26 @@ d_Q=\frac{\gamma\Delta^2}{m}.
 For the endpoint logical swap, the leading undesirable population error is
 
 ```math
-q_{\rm bad}
+q_{\mathrm{bad}}
 =\frac{\pi\epsilon\gamma\Delta^2}{16\Omega m}
 +O(\epsilon^2)
 ```
 
-at fixed $m$. It includes leakage as well as a wrong logical bit. The sequence uses $m+1$ levels and time $(2m-1)\pi/(2\Omega)$. Its phase-error weight grows as $\epsilon\gamma\Delta^2m/\Omega$ in the perturbative regime.
+at fixed $`m`$. It includes leakage as well as a wrong logical bit. The sequence uses $`m+1`$ levels and time $`(2m-1)\pi/(2\Omega)`$. Its phase-error weight grows as $`\epsilon\gamma\Delta^2m/\Omega`$ in the perturbative regime.
 
-The exact transfer probabilities establish the $1/m$ population-error asymptotic even when the dimension increases at fixed noise strength. The conclusion concerns basis populations. At fixed positive noise, this ladder sequence loses logical phase coherence as $m\to\infty$; a separate [coherence estimate](constructions.md#coherence-at-fixed-noise-as-the-ladder-grows) establishes this limit without extrapolating a first-order probability.
+The exact transfer probabilities establish the $`1/m`$ population-error asymptotic even when the dimension increases at fixed noise strength. The conclusion concerns basis populations. At fixed positive noise, this ladder sequence loses logical phase coherence as $`m\to\infty`$; a separate [coherence estimate](constructions.md#coherence-at-fixed-noise-as-the-ladder-grows) establishes this limit without extrapolating a first-order probability.
 
-This is relevant to noise-biased computation because different error components can have different correction costs. It does not establish that a larger value of $m$ improves total gate fidelity or a fault-tolerant threshold. Such a conclusion requires an explicit code, circuit, phase-error budget and implementation model.
+This is relevant to noise-biased computation because different error components can have different correction costs. It does not establish that a larger value of $`m`$ improves total gate fidelity or a fault-tolerant threshold. Such a conclusion requires an explicit code, circuit, phase-error budget and implementation model.
 
 ### Fixed span and a fixed physical ladder
 
 The normalization of the noise operator is a physical resource.
 
-For $L=N=\operatorname{diag}(0,1,\ldots,m)$ with fixed coupling to the noise, the endpoint span grows with $m$. The direct transition has distance $\gamma m^2$, while adjacent routing has distance $\gamma m$. Routing improves the comparison by a factor of $m$, but the absolute error coefficient still grows.
+For $`L=N=\mathrm{diag}(0,1,\ldots,m)`$ with fixed coupling to the noise, the endpoint span grows with $`m`$. The direct transition has distance $`\gamma m^2`$, while adjacent routing has distance $`\gamma m`$. Routing improves the comparison by a factor of $`m`$, but the absolute error coefficient still grows.
 
-For a fixed endpoint span divided into more intermediate values, the distance instead decreases as $1/m$. These are different families of devices. The latter comparison holds the logical endpoint coherence-decay rate fixed while increasing the available spectral resolution.
+For a fixed endpoint span divided into more intermediate values, the distance instead decreases as $`1/m`$. These are different families of devices. The latter comparison holds the logical endpoint coherence-decay rate fixed while increasing the available spectral resolution.
 
-A three-level system already illustrates the distinction without an asymptotic extrapolation. For $L=\operatorname{diag}(-1,0,1)$, a direct transfer between the outer states costs $4\gamma$, while routing through the middle state costs $2\gamma$. The same physical noise operator is used in both protocols. Whether the direct and adjacent transitions are equally controllable is an additional assumption, addressed in [control resources](control_resources.md).
+A three-level system already illustrates the distinction without an asymptotic extrapolation. For $`L=\mathrm{diag}(-1,0,1)`$, a direct transfer between the outer states costs $`4\gamma`$, while routing through the middle state costs $`2\gamma`$. The same physical noise operator is used in both protocols. Whether the direct and adjacent transitions are equally controllable is an additional assumption, addressed in [control resources](control_resources.md).
 
 ## Why binary dephasing behaves differently
 
@@ -91,7 +91,7 @@ The graph distance is an exact leading-order optimum for the stated dephasing an
 
 | Resource | Effect in this model |
 |---|---|
-| Faster coherent mixing | Lowers the unavoidable error scale through $1/\Omega$ |
+| Faster coherent mixing | Lowers the unavoidable error scale through $`1/\Omega`$ |
 | Intermediate physical noise signatures | Can shorten the dephasing distance |
 | Retaining or discarding a syndrome | Can protect data while leaving uncertainty in workspace |
 

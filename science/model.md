@@ -6,13 +6,13 @@ The answer depends on the available noise eigenvalues. Pairwise dephasing rates 
 
 ## Dynamics and conventions
 
-Let the retained system have finite Hilbert space $\mathcal H=\mathbb C^N$. Fix mutually commuting Hermitian operators $L_a$ and reference rates $\gamma_a\ge0$. Choose a common orthonormal eigenbasis,
+Let the retained system have finite Hilbert space $`\mathcal H=\mathbb C^N`$. Fix mutually commuting Hermitian operators $`L_a`$ and reference rates $`\gamma_a\ge0`$. Choose a common orthonormal eigenbasis,
 
 ```math
 L_a\lvert i\rangle=\lambda_{ai}\lvert i\rangle.
 ```
 
-With $\hbar=1$, the density matrix evolves according to
+With $`\hbar=1`$, the density matrix evolves according to
 
 ```math
 \dot\rho_\epsilon(t)
@@ -22,7 +22,7 @@ With $\hbar=1$, the density matrix evolves according to
 \mathcal D[L](\rho)=L\rho L-\frac12\{L^2,\rho\}.
 ```
 
-The nonnegative number $\epsilon$ scales all noise rates. The operators, reference rates, finite dimension, initial state and target are held fixed when taking the weak-noise limit. The noise is Markovian and fixed in this basis. Controls are deterministic, piecewise continuous, or more generally measurable and bounded on each finite interval. No intermediate measurements, resets, discarded subsystems or conditioning on an observed noise record are included in this model.
+The nonnegative number $`\epsilon`$ scales all noise rates. The operators, reference rates, finite dimension, initial state and target are held fixed when taking the weak-noise limit. The noise is Markovian and fixed in this basis. Controls are deterministic, piecewise continuous, or more generally measurable and bounded on each finite interval. No intermediate measurements, resets, discarded subsystems or conditioning on an observed noise record are included in this model.
 
 The control resource is a bound on the instantaneous spectral halfwidth,
 
@@ -36,7 +36,7 @@ h(H(t))
 
 A scalar energy shift is immaterial. This is a global budget for the complete retained system, not a bound on each term in a sum of simultaneous controls. The lower bound also admits a more local formulation in terms of the Hamiltonian blocks crossing specified cuts; see [the finite-noise proof](finite_noise.md).
 
-For the primary transfer problem, initialize $\rho_\epsilon(0)=\lvert s\rangle\langle s\rvert$ and target $\lvert t\rangle$. Define
+For the primary transfer problem, initialize $`\rho_\epsilon(0)=\lvert s\rangle\langle s\rvert`$ and target $`\lvert t\rangle`$. Define
 
 ```math
 q_\epsilon(H,T)
@@ -47,7 +47,7 @@ q_*(\epsilon;s,t)
 q_\epsilon(H,T).
 ```
 
-Every outcome other than the desired basis state counts as failure. In an encoded gate this includes population outside the logical subspace. The target may differ from the noiseless endpoint of a candidate control: the infimum permits controls optimized directly at nonzero noise. It also permits families whose durations grow as $\epsilon$ decreases.
+Every outcome other than the desired basis state counts as failure. In an encoded gate this includes population outside the logical subspace. The target may differ from the noiseless endpoint of a candidate control: the infimum permits controls optimized directly at nonzero noise. It also permits families whose durations grow as $`\epsilon`$ decreases.
 
 The initial and final *basis* states are stationary under the noise alone. The error arises during the intervening coherent motion. Reliability on arbitrary superpositions is a separate channel property, evaluated explicitly for the logical gate construction.
 
@@ -60,19 +60,19 @@ Q_{ij}
 =\sum_a\gamma_a(\lambda_{ai}-\lambda_{aj})^2.
 ```
 
-The weighted noise signature of level $i$ is $(\sqrt{\gamma_a}\lambda_{ai})_a$. Equality of these signatures requires equal eigenvalues only for active jumps with $\gamma_a>0$; a zero-rate jump has no physical effect. References below to distinct noise signatures use this weighted definition.
+The weighted noise signature of level $`i`$ is $`(\sqrt{\gamma_a}\lambda_{ai})_a`$. Equality of these signatures requires equal eigenvalues only for active jumps with $`\gamma_a>0`$; a zero-rate jump has no physical effect. References below to distinct noise signatures use this weighted definition.
 
-When $H=0$, the corresponding coherence obeys
+When $`H=0`$, the corresponding coherence obeys
 
 ```math
 \dot\rho_{ij}=-\frac{\epsilon Q_{ij}}2\rho_{ij}.
 ```
 
-Thus $\epsilon Q_{ij}/2$ is the physical coherence-decay rate. This convention fixes all factors of two in the results. In particular, $\kappa\mathcal D[Z](\rho)=\kappa(Z\rho Z-\rho)$ gives coherence decay rate $2\kappa$.
+Thus $`\epsilon Q_{ij}/2`$ is the physical coherence-decay rate. This convention fixes all factors of two in the results. In particular, $`\kappa\mathcal D[Z](\rho)=\kappa(Z\rho Z-\rho)`$ gives coherence decay rate $`2\kappa`$.
 
 The representation of dephasing rates through squared differences of jump eigenvalues is established background; see [Fagnola et al. in the related-work account](../references/RELATED_WORK.md). Here it serves as the input to a control optimization.
 
-Build the complete undirected graph on the available common eigenstates, with edge weights $Q_{ij}$. Its shortest-path distance is
+Build the complete undirected graph on the available common eigenstates, with edge weights $`Q_{ij}`$. Its shortest-path distance is
 
 ```math
 d_Q(s,t)
@@ -82,15 +82,15 @@ d_Q(s,t)
 
 Repeated vertices can be removed, so a finite minimizing path exists. Zero-cost vertices may be identified. The resulting distance is a pseudometric on the original basis and a metric on distinct noise signatures.
 
-The matrix $Q$ itself need not satisfy the triangle inequality. An intermediate state can have a noise signature close to both endpoints, making two shorter transitions less costly than their direct connection. The distance $d_Q$ is the metric closure of $Q$.
+The matrix $`Q`$ itself need not satisfy the triangle inequality. An intermediate state can have a noise signature close to both endpoints, making two shorter transitions less costly than their direct connection. The distance $`d_Q`$ is the metric closure of $`Q`$.
 
-These costs can be specified through coherence-decay rates without selecting a particular Lindblad representation. Real shifts of individual Hermitian jumps and orthogonal changes among the weighted jumps preserve $Q$. Adding an extra dephasing channel can only increase the distance. Adding available states while retaining the old costs can only decrease it.
+These costs can be specified through coherence-decay rates without selecting a particular Lindblad representation. Real shifts of individual Hermitian jumps and orthogonal changes among the weighted jumps preserve $`Q`$. Adding an extra dephasing channel can only increase the distance. Adding available states while retaining the old costs can only decrease it.
 
 ## Exact claims and their domains
 
 ### Arbitrary-strength lower bound
 
-For every finite duration, every admissible Hamiltonian and every $\epsilon\ge0$,
+For every finite duration, every admissible Hamiltonian and every $`\epsilon\ge0`$,
 
 ```math
 q_\epsilon(H,T)
@@ -117,11 +117,11 @@ The constant in the remainder may depend on the fixed finite model. The lower bo
 
 The optimization over noise-dependent controls is justified by the uniform finite-noise lower bound and one fixed constructive upper bound. It is not obtained by exchanging an infimum with a perturbative expansion. [The geometry account](geometry.md) gives the complete argument.
 
-If $d_Q(s,t)=0$, the endpoints have identical weighted noise signatures. A rotation inside their common eigenspace for the active jumps transfers the state with exactly zero noise error.
+If $`d_Q(s,t)=0`$, the endpoints have identical weighted noise signatures. A rotation inside their common eigenspace for the active jumps transfers the state with exactly zero noise error.
 
 ### Logical gates and spectral refinement
 
-A path with $m$ edges produces an endpoint logical swap using $2m-1$ selective rotations. Both logical basis inputs attain the same leading coefficient. A controlled form implements an exact ideal CNOT on a control qubit and the endpoint logical qubit, provided the specified conditional controls and diagonal shifts are available.
+A path with $`m`$ edges produces an endpoint logical swap using $`2m-1`$ selective rotations. Both logical basis inputs attain the same leading coefficient. A controlled form implements an exact ideal CNOT on a control qubit and the endpoint logical qubit, provided the specified conditional controls and diagonal shifts are available.
 
 For one Hermitian noise operator with ordered eigenvalues between the endpoints,
 
@@ -130,7 +130,7 @@ d_Q(s,t)
 =\gamma\sum_{k}(\lambda_k-\lambda_{k-1})^2.
 ```
 
-A fixed span $\Delta$ divided into $m$ uniform gaps gives $d_Q=\gamma\Delta^2/m$. The optimal endpoint population error then has a sharp $1/m$ asymptotic even at fixed noise strength. The construction takes time $(2m-1)\pi/(2\Omega)$, and its fixed-$m$ first-order phase-error coefficient grows with $m$. Exact probabilities, channel components and a separate fixed-noise coherence estimate are derived in [constructions](constructions.md).
+A fixed span $`\Delta`$ divided into $`m`$ uniform gaps gives $`d_Q=\gamma\Delta^2/m`$. The optimal endpoint population error then has a sharp $`1/m`$ asymptotic even at fixed noise strength. The construction takes time $`(2m-1)\pi/(2\Omega)`$, and its fixed-$`m`$ first-order phase-error coefficient grows with $`m`$. Exact probabilities, channel components and a separate fixed-noise coherence estimate are derived in [constructions](constructions.md).
 
 ### Retained and disposable workspace
 

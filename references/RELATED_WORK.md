@@ -8,35 +8,35 @@ Bibliographic keys below match [references.bib](references.bib). Publication sta
 
 The [model](../science/model.md) uses mutually commuting Hermitian jumps,
 
-$$
+```math
 \dot\rho_\epsilon=-i[H(t),\rho_\epsilon]
 +\epsilon\sum_a\gamma_a\mathcal D[L_a](\rho_\epsilon),
 \qquad
 \mathcal D[L](\rho)=L\rho L-\tfrac12\{L^2,\rho\},
-$$
+```
 
-with common eigenvalues $\lambda_{ai}$ and a global Hamiltonian spectral halfwidth at most $\Omega$. Set
+with common eigenvalues $`\lambda_{ai}`$ and a global Hamiltonian spectral halfwidth at most $`\Omega`$. Set
 
-$$
+```math
 Q_{ij}=\sum_a\gamma_a(\lambda_{ai}-\lambda_{aj})^2,
 \qquad
 d_Q(s,t)=\min_{s=i_0,\ldots,i_m=t}\sum_{k=1}^m Q_{i_{k-1}i_k}.
-$$
+```
 
-The physical coherence-decay rate without control is $\epsilon Q_{ij}/2$. For basis-state transfer, with every outcome outside the target counted as failure, the results are
+The physical coherence-decay rate without control is $`\epsilon Q_{ij}/2`$. For basis-state transfer, with every outcome outside the target counted as failure, the results are
 
-$$
+```math
 q_\epsilon(H,T)\ge
 \frac{\pi\epsilon d_Q(s,t)}
 {16\Omega+8\pi\epsilon d_Q(s,t)}
-$$
+```
 
 for every admissible finite-duration protocol, and
 
-$$
+```math
 \inf_{H,T}q_\epsilon(H,T)
 =\frac{\pi d_Q(s,t)}{16\Omega}\epsilon+O(\epsilon^2)
-$$
+```
 
 when selective pair rotations on a minimizing path are available. The finite-noise expression is a lower bound, not a claimed exact finite-noise optimum. The lower bound is uniform over protocols whose duration or controls depend on the noise strength.
 
@@ -55,7 +55,7 @@ The graph is built from **noise signatures**, rather than physical adjacency or 
 
 ### Two-level optimality: Lu et al.
 
-Xiao-Jing Lu and collaborators derive the integrated dephasing sensitivity for a driven two-level system and show that a flat $\pi$ pulse minimizes it under a maximum Rabi-frequency constraint. Section IV, Eqs. (22)–(26), of their [primary manuscript](https://arxiv.org/pdf/1305.6127) contains the relevant result. With their Rabi frequency equal to $2\Omega$ in the present convention, the scalar variance integral is $\pi/(4\Omega)$.
+Xiao-Jing Lu and collaborators derive the integrated dephasing sensitivity for a driven two-level system and show that a flat $`\pi`$ pulse minimizes it under a maximum Rabi-frequency constraint. Section IV, Eqs. (22)–(26), of their [primary manuscript](https://arxiv.org/pdf/1305.6127) contains the relevant result. With their Rabi frequency equal to $`2\Omega`$ in the present convention, the scalar variance integral is $`\pi/(4\Omega)`$.
 
 This two-level optimum and its saturating pulse are prior results. The extension here is the reduction of every admissible multilevel path to weighted binary crossings, yielding the metric closure of the full noise-distance matrix. The finite-noise converse additionally controls optimization over arbitrarily long, noise-dependent protocols. Merely applying the known scalar formula to a chosen chain would establish an upper bound, not the all-control optimum.
 
@@ -63,7 +63,7 @@ This two-level optimum and its saturating pulse are prior results. The extension
 
 Franco Fagnola, John E. Gough, Hendra I. Nurdin and Lorenza Viola explicitly represent dephasing by vectors of diagonal jump eigenvalues. In their [accepted manuscript](https://arxiv.org/pdf/1811.11784), Lemma 14, Eq. (20), gives the coherence generator; Section 3.2.1, Eq. (27) and its following discussion, interprets damping through squared lengths of differences between the vectors. The published article is *Journal of Physics A: Mathematical and Theoretical* **52**, 385301 (2019).
 
-Thus the Euclidean representation of the noise is established. The shortest-path closure of those squared distances, and its exact operational meaning for bounded coherent transfer, are the additional statements here. To fix normalization, this repository uses its explicit dissipator and the directly derived coherence rate $Q_{ij}/2$.
+Thus the Euclidean representation of the noise is established. The shortest-path closure of those squared distances, and its exact operational meaning for bounded coherent transfer, are the additional statements here. To fix normalization, this repository uses its explicit dissipator and the directly derived coherence rate $`Q_{ij}/2`$.
 
 Earlier work by S. G. Schirmer and A. I. Solomon derives complete-positivity constraints on relaxation and dephasing rates in multilevel systems ([SchirmerSolomon2004](https://arxiv.org/pdf/quant-ph/0312231)). It is relevant to which rate matrices are physically admissible. That structural problem does not optimize coherent transfer. The current model specifies Hermitian commuting jumps from the start, so complete positivity is automatic.
 
@@ -83,7 +83,7 @@ This is directly relevant antecedent work on noise-aware multilevel transfer. Th
 
 ### Liu–Yang–Li: perturbative objectives for Markovian noise
 
-Ran Liu, Xiaodong Yang and Jun Li develop a robust-control method that optimizes noise-induced perturbation terms order by order ([Liu2024](https://doi.org/10.1103/PhysRevA.110.012402), *Physical Review A* **110**, 012402 (2024)). Their publisher abstract lists state-transfer examples in two-level and three-level $\Lambda$ systems, and gate examples in two-level and three-level ladder systems. It reports substantial improvement for state transfer and more limited improvement for gate fidelity.
+Ran Liu, Xiaodong Yang and Jun Li develop a robust-control method that optimizes noise-induced perturbation terms order by order ([Liu2024](https://doi.org/10.1103/PhysRevA.110.012402), *Physical Review A* **110**, 012402 (2024)). Their publisher abstract lists state-transfer examples in two-level and three-level $`\Lambda`$ systems, and gate examples in two-level and three-level ladder systems. It reports substantial improvement for state transfer and more limited improvement for gate fidelity.
 
 The present theorem gives an analytic global optimum for a specific fixed-dephasing, eigenstate-transfer problem. That distinction should be tested against their detailed objectives and control constraints before using their numerical examples as direct benchmarks. **Only the publisher abstract and author-institution publication records were accessible.** Those sources do not provide enough information for a complete theorem-level exclusion of overlap.
 
@@ -105,7 +105,7 @@ This documented scope differs from the exact leading eigenstate-transfer cost co
 
 [Yuan2012](https://arxiv.org/pdf/1004.4050), by Haidong Yuan, Christiane P. Koch, Peter Salamon and David J. Tannor, gives analytic optimal-control results for transfer through decaying intermediate states. It recovers STIRAP as a global infinite-time optimum for one lossy intermediate and establishes an obstruction for paths containing two consecutive lossy intermediates at finite power. This is an important topology-dependent transfer theorem. Its amplitude-loss model and constraints differ from the unital dephasing generator and squared-noise-distance cost here.
 
-In [Huang2022](https://doi.org/10.1140/epjqt/s40507-022-00152-z), Wei Huang, Wentao Zhang, Xinwei Du and Chu Guo study transfer through a locally dephased intermediate spin. Their three-state jump has labels $(-1,+1,-1)$: the endpoints have identical noise signatures. In the present graph they therefore have distance zero. Suppression of loss by longer adiabatic passage is consistent with the theorem. The comparison also illustrates a control distinction: an unrestricted direct rotation within the protected endpoint sector need not be available in a particular chain Hamiltonian.
+In [Huang2022](https://doi.org/10.1140/epjqt/s40507-022-00152-z), Wei Huang, Wentao Zhang, Xinwei Du and Chu Guo study transfer through a locally dephased intermediate spin. Their three-state jump has labels $`(-1,+1,-1)`$: the endpoints have identical noise signatures. In the present graph they therefore have distance zero. Suppression of loss by longer adiabatic passage is consistent with the theorem. The comparison also illustrates a control distinction: an unrestricted direct rotation within the protected endpoint sector need not be available in a particular chain Hamiltonian.
 
 The earlier study [Ivanov2004](https://doi.org/10.1103/PhysRevA.70.063409), by P. A. Ivanov, N. V. Vitanov and K. Bergmann, analyzes dephasing effects on STIRAP. Its publisher abstract was inspected; the full text was not available here. It is cited as a primary antecedent for adiabatic dephasing sensitivity, without attributing an unrestricted-control theorem to it.
 

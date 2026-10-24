@@ -8,7 +8,7 @@ The account also constructs coherent endpoint gates, charges their phase error a
 
 ## Main result
 
-Work in units with $\hbar=1$. The dynamics and control budget are
+Work in units with $`\hbar=1`$. The dynamics and control budget are
 
 ```math
 \begin{aligned}
@@ -18,7 +18,7 @@ Work in units with $\hbar=1$. The dynamics and control budget are
 \end{aligned}
 ```
 
-The $L_a$ commute and are Hermitian. Write $L_a|i\rangle=\lambda_{ai}|i\rangle$ in a common eigenbasis, and assign each pair the cost
+The $`L_a`$ commute and are Hermitian. Write $`L_a|i\rangle=\lambda_{ai}|i\rangle`$ in a common eigenbasis, and assign each pair the cost
 
 ```math
 \begin{aligned}
@@ -27,7 +27,7 @@ d_Q(s,t)&=\min_{s=i_0,\ldots,i_m=t}\sum_{k=1}^{m}Q_{i_{k-1}i_k}.
 \end{aligned}
 ```
 
-The uncontrolled coherence-decay rate is $\epsilon Q_{ij}/2$. For initial state $|s\rangle$ and terminal error $q=1-\langle t|\rho(T)|t\rangle$,
+The uncontrolled coherence-decay rate is $`\epsilon Q_{ij}/2`$. For initial state $`|s\rangle`$ and terminal error $`q=1-\langle t|\rho(T)|t\rangle`$,
 
 ```math
 q\geq\frac{\pi\epsilon d_Q(s,t)}{16\Omega+8\pi\epsilon d_Q(s,t)}.
@@ -47,13 +47,13 @@ The infimum allows arbitrary many-level coherent controls and noise-dependent du
 | Setting | Result | Resource or operational boundary |
 |---|---|---|
 | Several commuting dephasing channels | The metric closure of their squared noise-distance matrix gives the optimal leading transfer cost. | The complete graph describes noise costs; hardware connectivity may restrict which saturating pulses are available. |
-| One scalar spectrum with $m$ equal gaps in fixed span $\Delta$ | The distance is $\gamma\Delta^2/m$. | The endpoint gate uses $m-1$ helper levels and $2m-1$ pulses. Its leading phase-error coefficient grows with $m$. |
+| One scalar spectrum with $`m`$ equal gaps in fixed span $`\Delta`$ | The distance is $`\gamma\Delta^2/m`$. | The endpoint gate uses $`m-1`$ helper levels and $`2m-1`$ pulses. Its leading phase-error coefficient grows with $`m`$. |
 | Binary dephasing labels | The costs already form a weighted Hamming metric. | Adding noiseless copies of the same labels cannot shorten the distance to a prescribed joint pure target. |
-| Coherent work register with data error $e=o(R)$ as $R\to0$ | Suppressed data error requires imperfect pure-work return and work entropy of order at least $R\ln(1/R)$. | A finite coherent repetition circuit attains the entropy order while leaving syndromes in work. A data-only linear error floor would therefore be false. |
+| Coherent work register with data error $`e=o(R)`$ as $`R\to0`$ | Suppressed data error requires imperfect pure-work return and work entropy of order at least $`R\ln(1/R)`$. | A finite coherent repetition circuit attains the entropy order while leaving syndromes in work. A data-only linear error floor would therefore be false. |
 
-Here $R$ is the sum of the relevant actual dephasing rates divided by their label-mixing budgets; its precise local-control definition is in [workspace.md](science/workspace.md).
+Here $`R`$ is the sum of the relevant actual dephasing rates divided by their label-mixing budgets; its precise local-control definition is in [workspace.md](science/workspace.md).
 
-As a small example, noise signatures $(-1,0)$ and $(1,0)$ have direct squared-distance cost $4$. An available level with signature $(0,1/2)$ gives a two-edge path of cost $5/2$; adding a fourth level at $(0,2)$ gives no shorter route. The optimal leading population error is therefore 37.5% smaller than that of the direct rotation, with twice the transfer duration. The lower bound certifies the improvement against arbitrary coherent controls in this four-level example. [Interpretation and examples](science/interpretation.md)
+As a small example, noise signatures $`(-1,0)`$ and $`(1,0)`$ have direct squared-distance cost $`4`$. An available level with signature $`(0,1/2)`$ gives a two-edge path of cost $`5/2`$; adding a fourth level at $`(0,2)`$ gives no shorter route. The optimal leading population error is therefore 37.5% smaller than that of the direct rotation, with twice the transfer duration. The lower bound certifies the improvement against arbitrary coherent controls in this four-level example. [Interpretation and examples](science/interpretation.md)
 
 ## Learning route
 
