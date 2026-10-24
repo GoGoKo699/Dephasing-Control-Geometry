@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "provenance": "Analytic values from science/constructions.md; finite populations use the closed-form two-level product, and derivatives use the stated exact coefficients. These expectations are independent of the dense-exponential observations. The workspace family uses exact pulse counts, the trigonometric one-jump operator span, and an explicit two-jump witness from science/workspace.md.",
+  "tolerances": {
+    "absolute": 5e-11,
+    "relative": 2e-10
+  },
+  "values": {
+    "two_jump_graph": {
+      "cost_matrix": [
+        [
+          0,
+          4,
+          1.25,
+          5
+        ],
+        [
+          4,
+          0,
+          1.25,
+          5
+        ],
+        [
+          1.25,
+          1.25,
+          0,
+          2.25
+        ],
+        [
+          5,
+          5,
+          2.25,
+          0
+        ]
+      ],
+      "shortest_distance": 2.5,
+      "first_derivatives": {
+        "direct": 0.7853981633974483,
+        "transfer": 0.4908738521234052,
+        "swap": 0.4908738521234052,
+        "swap_reverse": 0.4908738521234052
+      },
+      "finite_noise": [
+        {
+          "epsilon": 0.001,
+          "direct": 0.0007847817340368435,
+          "transfer": 0.0004906931895301003,
+          "swap": 0.0004906931895301003,
+          "swap_reverse": 0.0004906931895301003,
+          "finite_lower_bound": 0.0004889537352949703
+        },
+        {
+          "epsilon": 0.0001,
+          "direct": 7.853364825816112e-05,
+          "transfer": 4.908557808902536e-05,
+          "swap": 4.908557808902536e-05,
+          "swap_reverse": 4.908557808902536e-05,
+          "finite_lower_bound": 4.906811620816488e-05
+        }
+      ]
+    },
+    "uniform_ladder": [
+      {
+        "gaps": 1,
+        "pulse_count": 1,
+        "duration": 1.5707963267948966,
+        "maximum_halfwidth": 1,
+        "ideal_full_gate_error": 0,
+        "x_derivative": 0,
+        "y_derivative": 0.19634954084936207,
+        "z_derivative": 0.19634954084936207,
+        "leakage_derivative": 0,
+        "truth_derivative": 0.19634954084936207,
+        "off_diagonal_process_derivative": 0
+      },
+      {
+        "gaps": 2,
+        "pulse_count": 3,
+        "duration": 4.71238898038469,
+        "maximum_halfwidth": 1,
+        "ideal_full_gate_error": 0,
+        "x_derivative": 0,
+        "y_derivative": 0.04908738521234052,
+        "z_derivative": 0.5154175447295755,
+        "leakage_derivative": 0.04908738521234052,
+        "truth_derivative": 0.09817477042468103,
+        "off_diagonal_process_derivative": 0
+      },
+      {
+        "gaps": 4,
+        "pulse_count": 7,
+        "duration": 10.995574287564276,
+        "maximum_halfwidth": 1,
+        "ideal_full_gate_error": 0,
+        "x_derivative": 0,
+        "y_derivative": 0.01227184630308513,
+        "z_derivative": 1.0492428589137786,
+        "leakage_derivative": 0.03681553890925539,
+        "truth_derivative": 0.04908738521234052,
+        "off_diagonal_process_derivative": 0
+      }
+    ],
+    "controlled_gate": {
+      "gaps": 3,
+      "epsilon": 0.02,
+      "control_z_reference_rate": 0.2,
+      "pulse_count": 5,
+      "maximum_halfwidth": 1,
+      "maximum_operator_norm": 2,
+      "ideal_code_gate_error": 0,
+      "ideal_code_leakage_norm": 0,
+      "truth_errors": [
+        0,
+        0,
+        0.00130785542134082,
+        0.00130785542134082
+      ],
+      "average_truth_error": 0.00065392771067041,
+      "truth_derivatives": [
+        0,
+        0,
+        0.06544984694978735,
+        0.06544984694978735
+      ],
+      "average_truth_derivative": 0.032724923474893676
+    },
+    "coherent_workspace": {
+      "dimension": 16,
+      "pulse_count": 12,
+      "cnot_pulse_count": 9,
+      "controlled_half_pulse_count": 3,
+      "duration": 16.493361431346415,
+      "maximum_halfwidth": 1,
+      "maximum_target_mixing_block": 1,
+      "ideal_data_and_work_error": 0,
+      "compiled_toffoli_error": 0,
+      "one_jump_coefficient_count": 72,
+      "signed_rotation_identity_error": 0,
+      "continuous_one_jump_wrong_amplitude": 0,
+      "continuous_one_jump_non_z_weight": 0,
+      "single_jump_witness_data_error": 0,
+      "single_jump_witness_work_return_error": 1,
+      "two_jump_witness_truth_error": 0.5,
+      "two_jump_witness_non_z_weight": 0.5,
+      "two_jump_pauli_identity_error": 0
+    }
+  }
+}
