@@ -11,19 +11,20 @@ The account also constructs coherent endpoint gates, charges their phase error a
 Work in units with $\hbar=1$. The dynamics and control budget are
 
 ```math
-\dot\rho=-i[H(t),\rho]+\epsilon\sum_a\gamma_a\mathcal D[L_a](\rho),
-\qquad
-\mathcal D[L](\rho)=L\rho L-\tfrac12\{L^2,\rho\},
-\qquad
-\min_{c\in\mathbb R}\|H(t)-cI\|_\infty\leq\Omega.
+\begin{aligned}
+\dot\rho&=-i[H(t),\rho]+\epsilon\sum_a\gamma_a\mathcal D[L_a](\rho),\\
+\mathcal D[L](\rho)&=L\rho L-\tfrac12\{L^2,\rho\},\\
+\min_{c\in\mathbb R}\|H(t)-cI\|_\infty&\leq\Omega.
+\end{aligned}
 ```
 
 The $L_a$ commute and are Hermitian. Write $L_a|i\rangle=\lambda_{ai}|i\rangle$ in a common eigenbasis, and assign each pair the cost
 
 ```math
-Q_{ij}=\sum_a\gamma_a(\lambda_{ai}-\lambda_{aj})^2,
-\qquad
-d_Q(s,t)=\min_{s=i_0,\ldots,i_m=t}\sum_{k=1}^{m}Q_{i_{k-1}i_k}.
+\begin{aligned}
+Q_{ij}&=\sum_a\gamma_a(\lambda_{ai}-\lambda_{aj})^2,\\
+d_Q(s,t)&=\min_{s=i_0,\ldots,i_m=t}\sum_{k=1}^{m}Q_{i_{k-1}i_k}.
+\end{aligned}
 ```
 
 The uncontrolled coherence-decay rate is $\epsilon Q_{ij}/2$. For initial state $|s\rangle$ and terminal error $q=1-\langle t|\rho(T)|t\rangle$,
@@ -46,13 +47,23 @@ The infimum allows arbitrary many-level coherent controls and noise-dependent du
 | Setting | Result | Resource or operational boundary |
 |---|---|---|
 | Several commuting dephasing channels | The metric closure of their squared noise-distance matrix gives the optimal leading transfer cost. | The complete graph describes noise costs; hardware connectivity may restrict which saturating pulses are available. |
-| One scalar spectrum with $m$ equal gaps in fixed span $\Delta$ | The distance is $\gamma\Delta^2/m$. | The endpoint gate uses $m-1$ helper levels and $2m-1$ pulses. Its logical phase error grows with $m$. |
+| One scalar spectrum with $m$ equal gaps in fixed span $\Delta$ | The distance is $\gamma\Delta^2/m$. | The endpoint gate uses $m-1$ helper levels and $2m-1$ pulses. Its leading phase-error coefficient grows with $m$. |
 | Binary dephasing labels | The costs already form a weighted Hamming metric. | Adding noiseless copies of the same labels cannot shorten the distance to a prescribed joint pure target. |
-| Coherent work register with accurate data output | Suppressed data error requires imperfect pure-work return and, in the stated weak-noise regime, work entropy of order at least $R\ln(1/R)$. | A finite coherent repetition circuit attains the entropy order while leaving syndromes in work. A data-only linear error floor would therefore be false. |
+| Coherent work register with data error $e=o(R)$ as $R\to0$ | Suppressed data error requires imperfect pure-work return and work entropy of order at least $R\ln(1/R)$. | A finite coherent repetition circuit attains the entropy order while leaving syndromes in work. A data-only linear error floor would therefore be false. |
 
 Here $R$ is the sum of the relevant actual dephasing rates divided by their label-mixing budgets; its precise local-control definition is in [workspace.md](science/workspace.md).
 
-As a small example, noise signatures $(-1,0)$ and $(1,0)$ have direct squared-distance cost $4$. An available level with signature $(0,1/2)$ gives a two-edge path of cost $5/2$; adding a fourth level at $(0,2)$ gives no shorter route. The optimal leading population error is therefore $37.5\%$ smaller than that of the direct rotation, with twice the transfer duration. The lower bound certifies the improvement against arbitrary coherent controls in this four-level example. [Interpretation and examples](science/interpretation.md)
+As a small example, noise signatures $(-1,0)$ and $(1,0)$ have direct squared-distance cost $4$. An available level with signature $(0,1/2)$ gives a two-edge path of cost $5/2$; adding a fourth level at $(0,2)$ gives no shorter route. The optimal leading population error is therefore 37.5% smaller than that of the direct rotation, with twice the transfer duration. The lower bound certifies the improvement against arbitrary coherent controls in this four-level example. [Interpretation and examples](science/interpretation.md)
+
+## Learning route
+
+The educational anchor is **Breuer and Petruccione, *The Theory of Open Quantum Systems***, Oxford University Press, 2007 paperback, ISBN 9780199213900. The learning route connects its open-system foundations to this project's control law and resource distinctions.
+
+- [Start with the physical example](learning/README.md): a complete three-level comparison, followed by the graph theorem, phase costs and workspace interpretation.
+- [Follow the 30-milestone map](learning/MILESTONES.md): 14 background/preliminaries milestones and 16 narrative/innovation milestones, progressing from local concepts to the full scientific account in each phase.
+- [Use the Breuer–Petruccione bridge](learning/BREUER_PETRUCCIONE_BRIDGE.md): verified chapter pointers, notation and rate conventions, assumptions, and the steps supplied by the project.
+
+The map is common to all readers. The source bridge supports targeted reading; the complete book is not a prerequisite for beginning the examples.
 
 ## Scientific account
 
@@ -85,7 +96,7 @@ The [verification guide](verification/README.md) states the examples, numerical 
 
 The exact optimization assumes a fixed finite model, commuting Hermitian Markovian jumps and the specified aggregate control budget. Achievability requires the stated selective pair controls; controlled gates also require conditional access. The result concerns population transfer and truth errors, including leakage. Coherent phase noise, duration, helper count and additional physical noise are accounted for separately. It does not establish a hardware advantage, an exact finite-noise optimum, or an optimal total-fidelity tradeoff under arbitrary device constraints.
 
-## Purpose
+## Purpose and contact
 
 This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
 
