@@ -59,7 +59,7 @@ The triangle inequality for $`d_Q`$ and the fact that truncation is a contractio
 Moreover, $`u_s=0`$ and $`u_t=d`$. List the distinct values of $`u`$ as
 
 ```math
-0=v_0<v_1<\cdots<v_K=d,
+0=v_0\lt v_1\lt\cdots\lt v_K=d,
 \qquad
 \delta_k=v_k-v_{k-1}.
 ```
