@@ -37,7 +37,7 @@ For probabilities $`p_i=|\langle i\vert\psi\rangle|^2`$ in the common eigenbasis
 
 ```math
 \sum_a\gamma_a\mathrm{Var}_{\psi}(L_a)
-=\sum_{i<j}p_ip_jQ_{ij}.
+=\sum_{i\lt j}p_ip_jQ_{ij}.
 ```
 
 The expression depends on the noise signatures and populations of the instantaneous pure state. All phases and all Hamiltonian interference mechanisms are still allowed.
