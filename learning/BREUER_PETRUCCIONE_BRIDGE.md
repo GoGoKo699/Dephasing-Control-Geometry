@@ -22,51 +22,51 @@ The formulas below use **project notation** and are derived or explained locally
 
 ## 2. The convention bridge
 
-The retained finite system has density matrix $\rho$, a positive matrix of trace one. A diagonal entry $\rho_{ii}$ is the probability of basis outcome $i$. The Hamiltonian $H(t)$ generates coherent motion; throughout this project $\hbar=1$.
+The retained finite system has density matrix $`\rho`$, a positive matrix of trace one. A diagonal entry $`\rho_{ii}`$ is the probability of basis outcome $`i`$. The Hamiltonian $`H(t)`$ generates coherent motion; throughout this project $`\hbar=1`$.
 
 The canonical equation is
 
-$$
+```math
 \dot\rho_\epsilon
 =-i[H(t),\rho_\epsilon]
 +\epsilon\sum_a\gamma_a\mathcal D[L_a](\rho_\epsilon),
 \qquad
 \mathcal D[L](\rho)
 =L\rho L^\dagger-\frac12\{L^\dagger L,\rho\}.
-$$
+```
 
-Here $\{A,B\}=AB+BA$. The project restricts $L_a$ to fixed, mutually commuting Hermitian operators, so $L_a^\dagger=L_a$ and a common eigenbasis exists.
+Here $`\{A,B\}=AB+BA`$. The project restricts $`L_a`$ to fixed, mutually commuting Hermitian operators, so $`L_a^\dagger=L_a`$ and a common eigenbasis exists.
 
 | Quantity or convention | Translation used here |
 |---|---|
-| A jump operator with its rate absorbed | Write $C_a=\sqrt{\epsilon\gamma_a}L_a$, so $\mathcal D[C_a]=\epsilon\gamma_a\mathcal D[L_a]$. |
-| Reference rate and noise strength | $\gamma_a$ is fixed while $\epsilon$ scales the noise. An actual rate is $\kappa_a=\epsilon\gamma_a$. |
-| Common noise eigenbasis | $L_a\lvert i\rangle=\lambda_{ai}\lvert i\rangle$. The weighted signature is $(\sqrt{\gamma_a}\lambda_{ai})_a$. |
-| Reference graph cost | $Q_{ij}=\sum_a\gamma_a(\lambda_{ai}-\lambda_{aj})^2$. |
-| Physical coherence-decay rate | $\Gamma_{ij}=\epsilon Q_{ij}/2$ when the coherent drive is off. |
-| Pure-state variance | $\operatorname{Var}_{\psi}(L)=\langle L^2\rangle_\psi-\langle L\rangle_\psi^2$. |
-| Purity | $P=\operatorname{Tr}\rho^2$; $P=1$ for a pure state. |
-| Control resource | $h(H)=\min_{c\in\mathbb R}\lVert H-cI\rVert_\infty\leq\Omega$, where the norm is the operator norm. |
-| Population-transfer failure | $q=1-\langle t\lvert\rho(T)\rvert t\rangle$, including every outcome outside the target. |
-| Workspace-page rates | The $\kappa_a$ in [workspace.md](../science/workspace.md) are actual rates, already including any weak-noise scaling. |
+| A jump operator with its rate absorbed | Write $`C_a=\sqrt{\epsilon\gamma_a}L_a`$, so $`\mathcal D[C_a]=\epsilon\gamma_a\mathcal D[L_a]`$. |
+| Reference rate and noise strength | $`\gamma_a`$ is fixed while $`\epsilon`$ scales the noise. An actual rate is $`\kappa_a=\epsilon\gamma_a`$. |
+| Common noise eigenbasis | $`L_a\lvert i\rangle=\lambda_{ai}\lvert i\rangle`$. The weighted signature is $`(\sqrt{\gamma_a}\lambda_{ai})_a`$. |
+| Reference graph cost | $`Q_{ij}=\sum_a\gamma_a(\lambda_{ai}-\lambda_{aj})^2`$. |
+| Physical coherence-decay rate | $`\Gamma_{ij}=\epsilon Q_{ij}/2`$ when the coherent drive is off. |
+| Pure-state variance | $`\mathrm{Var}_{\psi}(L)=\langle L^2\rangle_\psi-\langle L\rangle_\psi^2`$. |
+| Purity | $`P=\mathrm{Tr}\rho^2`$; $`P=1`$ for a pure state. |
+| Control resource | $`h(H)=\min_{c\in\mathbb R}\lVert H-cI\rVert_\infty\leq\Omega`$, where the norm is the operator norm. |
+| Population-transfer failure | $`q=1-\langle t\lvert\rho(T)\rvert t\rangle`$, including every outcome outside the target. |
+| Workspace-page rates | The $`\kappa_a`$ in [workspace.md](../science/workspace.md) are actual rates, already including any weak-noise scaling. |
 
 Comparing two noise formulas requires comparing their complete generators. A coefficient named “dephasing rate” may be the coefficient of a dissipator or the decay rate of an off-diagonal matrix element; those differ by a factor of two for the Pauli convention below.
 
 ### A compact qubit normalization check
 
-Let $Z=\operatorname{diag}(1,-1)$ and turn off $H$. Then
+Let $`Z=\mathrm{diag}(1,-1)`$ and turn off $`H`$. Then
 
-$$
+```math
 \kappa\mathcal D[Z](\rho)
 =\kappa(Z\rho Z-\rho)
 =-\frac{\kappa}{2}[Z,[Z,\rho]],
 \qquad
 \dot\rho_{01}=-2\kappa\rho_{01}.
-$$
+```
 
-Starting from $\lvert+\rangle=(\lvert0\rangle+\lvert1\rangle)/\sqrt2$ gives
+Starting from $`\lvert+\rangle=(\lvert0\rangle+\lvert1\rangle)/\sqrt2`$ gives
 
-$$
+```math
 \rho(t)=\frac12
 \begin{pmatrix}
 1&e^{-2\kappa t}\\
@@ -74,9 +74,9 @@ e^{-2\kappa t}&1
 \end{pmatrix},
 \qquad
 P(t)=\frac{1+e^{-4\kappa t}}2.
-$$
+```
 
-The populations stay at one half while coherence and purity decrease. Thus a measured coherence-decay rate $\Gamma_\phi$ corresponds to $\kappa=\Gamma_\phi/2$ in this convention. This check fixes the normalization; the transfer theorem itself starts in a noise eigenstate.
+The populations stay at one half while coherence and purity decrease. Thus a measured coherence-decay rate $`\Gamma_\phi`$ corresponds to $`\kappa=\Gamma_\phi/2`$ in this convention. This check fixes the normalization; the transfer theorem itself starts in a noise eigenstate.
 
 ## 3. Assumptions added to the textbook framework
 
@@ -84,25 +84,25 @@ A general open-system description covers more processes than the theorem here. T
 
 | Assumption in this project | Why it matters |
 |---|---|
-| Fixed commuting Hermitian jumps | Provides common noise signatures and preserves their basis populations when $H=0$. |
+| Fixed commuting Hermitian jumps | Provides common noise signatures and preserves their basis populations when $`H=0`$. |
 | Fixed laboratory-frame noise during a protocol | The same cost matrix applies along the entire controlled trajectory. |
 | Unital retained dynamics | Purity cannot increase; final high purity constrains the preceding trajectory. Hermitian dephasing has this property. General relaxation need not. |
 | A bound on total coherent mixing | Limits how quickly a trajectory can cross each partition used in the converse. |
 | All controlled workspace retained during the interval | Prevents entropy disposal from being silently identified with pure joint return. |
 | No feedback conditioned on an observed noise record | The control problem concerns the unconditional master-equation state. |
-| Fixed finite model when $\epsilon\to0$ | Gives the stated weak-noise expansion. The growing-ladder limit is treated separately through exact probabilities. |
+| Fixed finite model when $`\epsilon\to0`$ | Gives the stated weak-noise expansion. The growing-ladder limit is treated separately through exact probabilities. |
 
-The lower bound allows arbitrary admissible control shapes and finite durations, including choices that depend on $\epsilon$. Attaining it additionally requires selective pair rotations on a shortest path. Hardware selection rules, pulse bandwidth and conditional interactions must therefore be distinguished from the Lindblad description itself. The [model](../science/model.md) and [control-resource account](../science/control_resources.md) specify these domains.
+The lower bound allows arbitrary admissible control shapes and finite durations, including choices that depend on $`\epsilon`$. Attaining it additionally requires selective pair rotations on a shortest path. Hardware selection rules, pulse bandwidth and conditional interactions must therefore be distinguished from the Lindblad description itself. The [model](../science/model.md) and [control-resource account](../science/control_resources.md) specify these domains.
 
 ### Norm and phase conventions
 
-The spectral halfwidth is unchanged by a scalar energy shift. For Hermitian $H$,
+The spectral halfwidth is unchanged by a scalar energy shift. For Hermitian $`H`$,
 
-$$
+```math
 h(H)=\frac{\lambda_{\max}(H)-\lambda_{\min}(H)}2.
-$$
+```
 
-For a pair of levels, let $X_{ij}=\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert$ and $P_{ij}=\lvert i\rangle\langle i\rvert+\lvert j\rangle\langle j\rvert$. A pulse $\Omega X_{ij}$ has halfwidth $\Omega$ and produces $-iX$ on the pair after $\tau=\pi/(2\Omega)$. The phase-free pulse $\Omega(X_{ij}-P_{ij})$ produces $X$ in the same time. Its displayed operator norm is $2\Omega$, but its halfwidth is still $\Omega$.
+For a pair of levels, let $`X_{ij}=\lvert i\rangle\langle j\rvert+\lvert j\rangle\langle i\rvert`$ and $`P_{ij}=\lvert i\rangle\langle i\rvert+\lvert j\rangle\langle j\rvert`$. A pulse $`\Omega X_{ij}`$ has halfwidth $`\Omega`$ and produces $`-iX`$ on the pair after $`\tau=\pi/(2\Omega)`$. The phase-free pulse $`\Omega(X_{ij}-P_{ij})`$ produces $`X`$ in the same time. Its displayed operator norm is $`2\Omega`$, but its halfwidth is still $`\Omega`$.
 
 The selective pair energy shift is part of the second control. A phase that is common within a logical subspace can become a relative phase when the operation is conditioned on another register. The [construction](../science/constructions.md#1-a-phase-free-elementary-transposition) accounts for this explicitly.
 
@@ -114,51 +114,51 @@ The book's framework makes the objects meaningful. The following steps connect t
 
 In the common eigenbasis,
 
-$$
+```math
 \bigl(\mathcal D[L_a](\rho)\bigr)_{ij}
 =\left(\lambda_{ai}\lambda_{aj}
 -\frac{\lambda_{ai}^2+\lambda_{aj}^2}{2}\right)\rho_{ij}
 =-\frac{(\lambda_{ai}-\lambda_{aj})^2}{2}\rho_{ij}.
-$$
+```
 
-Summing gives $\Gamma_{ij}=\epsilon Q_{ij}/2$. Equal weighted signatures mean that every active jump acts identically on the two states; their common eigenspace is protected against this dissipator. Zero-rate jumps have no physical effect.
+Summing gives $`\Gamma_{ij}=\epsilon Q_{ij}/2`$. Equal weighted signatures mean that every active jump acts identically on the two states; their common eigenspace is protected against this dissipator. Zero-rate jumps have no physical effect.
 
 The squared-distance description has established research antecedents, credited to Fagnola and collaborators in [Related work](../references/RELATED_WORK.md). The control theorem uses its shortest-path closure, which can be smaller than a direct squared distance.
 
 ### Step B: Convert a fixed ideal trajectory into leading error
 
-Suppose one fixed finite control transfers $\lvert s\rangle$ exactly to $\lvert t\rangle$ when $\epsilon=0$, with ideal trajectory $\lvert\psi(u)\rangle$. The interaction-picture expansion gives
+Suppose one fixed finite control transfers $`\lvert s\rangle`$ exactly to $`\lvert t\rangle`$ when $`\epsilon=0`$, with ideal trajectory $`\lvert\psi(u)\rangle`$. The interaction-picture expansion gives
 
-$$
+```math
 q_\epsilon
 =\epsilon\int_0^T
-\sum_a\gamma_a\operatorname{Var}_{\psi(u)}(L_a)\,du
+\sum_a\gamma_a\mathrm{Var}_{\psi(u)}(L_a)\,du
 +O(\epsilon^2).
-$$
+```
 
 The local identity behind the sign is
 
-$$
+```math
 \langle\psi\lvert
 \mathcal D[L](\lvert\psi\rangle\langle\psi\rvert)
 \rvert\psi\rangle
-=-\operatorname{Var}_{\psi}(L).
-$$
+=-\mathrm{Var}_{\psi}(L).
+```
 
 This explains why exposure during a coherent motion matters even though its endpoint eigenstates do not dephase. It also fixes a second factor of two: instantaneous purity loss of a pure state is twice this fidelity-loss rate. The [interaction-picture derivation](../science/geometry.md#1-first-order-error-of-a-fixed-exact-transfer) states the precise fixed-protocol expansion.
 
 ### Step C: Prove a bound for every coherent path
 
-Let $d=d_Q(s,t)$ be the shortest-path distance of $Q$, and define a potential $u_i=\min\{d_Q(s,i),d\}$. It satisfies $|u_i-u_j|\leq Q_{ij}$. Thresholding the potential produces binary observables $D_k$ that separate the endpoints, with positive increments $\delta_k$ summing to $d$.
+Let $`d=d_Q(s,t)`$ be the shortest-path distance of $`Q`$, and define a potential $`u_i=\min\{d_Q(s,i),d\}`$. It satisfies $`|u_i-u_j|\leq Q_{ij}`$. Thresholding the potential produces binary observables $`D_k`$ that separate the endpoints, with positive increments $`\delta_k`$ summing to $`d`$.
 
 The comparison is
 
-$$
-\sum_a\gamma_a\operatorname{Var}_{\psi}(L_a)
-\geq\sum_k\frac{\delta_k}{4}\operatorname{Var}_{\psi}(D_k).
-$$
+```math
+\sum_a\gamma_a\mathrm{Var}_{\psi}(L_a)
+\geq\sum_k\frac{\delta_k}{4}\mathrm{Var}_{\psi}(D_k).
+```
 
-For each cut, $f=\langle D_k\rangle$ must pass from $+1$ to $-1$. The control budget implies $|\dot f|\leq2\Omega\sqrt{1-f^2}$, and integration gives a cost at least $\pi/(4\Omega)$. Summing therefore gives $\pi d/(16\Omega)$.
+For each cut, $`f=\langle D_k\rangle`$ must pass from $`+1`$ to $`-1`$. The control budget implies $`|\dot f|\leq2\Omega\sqrt{1-f^2}`$, and integration gives a cost at least $`\pi/(4\Omega)`$. Summing therefore gives $`\pi d/(16\Omega)`$.
 
 These cuts certify arbitrary coherent paths; they do not restrict the state to adjacent graph vertices. The scalar crossing optimum is credited to Lu and collaborators. The new connection developed here is the all-control graph certificate and its saturating path, proved in [Geometry](../science/geometry.md).
 
@@ -166,19 +166,19 @@ These cuts certify arbitrary coherent paths; they do not restrict the state to a
 
 The fixed-trajectory expansion cannot by itself justify optimization over durations that grow as noise decreases. For the actual mixed state, the exact identity is
 
-$$
--\frac{d}{dt}\operatorname{Tr}\rho^2
+```math
+-\frac{d}{dt}\mathrm{Tr}\rho^2
 =\epsilon\sum_a\gamma_a
 \lVert[L_a,\rho]\rVert_2^2.
-$$
+```
 
-Here $\lVert A\rVert_2^2=\operatorname{Tr}(A^\dagger A)$ is the Hilbert–Schmidt norm. Final overlap $1-q$ implies $P(T)\geq(1-q)^2$. Since purity cannot increase, that endpoint information bounds purity throughout the path. A state with high purity and substantial populations on both sides of a cut must carry coherence across that cut.
+Here $`\lVert A\rVert_2^2=\mathrm{Tr}(A^\dagger A)`$ is the Hilbert–Schmidt norm. Final overlap $`1-q`$ implies $`P(T)\geq(1-q)^2`$. Since purity cannot increase, that endpoint information bounds purity throughout the path. A state with high purity and substantial populations on both sides of a cut must carry coherence across that cut.
 
 The mixed-state block estimates and their integration give
 
-$$
+```math
 q\geq\frac{\pi\epsilon d}{16\Omega+8\pi\epsilon d}.
-$$
+```
 
 Combining this uniform converse with one fixed saturating path proves the sharp optimized leading coefficient. The rational expression is a finite-noise lower bound, not an exact finite-noise optimum. The full argument is in [Finite noise](../science/finite_noise.md), with the optimization quantifiers in [Geometry, Section 5](../science/geometry.md#5-optimization-at-nonzero-noise).
 
@@ -190,41 +190,41 @@ The [worked example and gate comparison](README.md#4-a-good-basis-transfer-is-on
 
 ## 5. From reduced states to retained-workspace consequences
 
-The composite-system distinction in Chapter 2 is operational here. The data marginal $\rho_D=\operatorname{Tr}_W\rho_{DW}$ can be accurate while the retained work $W$ stores a syndrome. A pure target for the joint state is a stricter requirement.
+The composite-system distinction in Chapter 2 is operational here. The data marginal $`\rho_D=\mathrm{Tr}_W\rho_{DW}`$ can be accurate while the retained work $`W`$ stores a syndrome. A pure target for the joint state is a stricter requirement.
 
-For target $\lvert b\rangle_D\lvert w_0\rangle_W$, define data error $e$, pure-work return error $r$, and joint target error $q$. Their target projectors commute, giving $q\leq e+r$. For binary data jumps with actual rates $\kappa_a$ and changed-label mixing budgets $h_a$, write
+For target $`\lvert b\rangle_D\lvert w_0\rangle_W`$, define data error $`e`$, pure-work return error $`r`$, and joint target error $`q`$. Their target projectors commute, giving $`q\leq e+r`$. For binary data jumps with actual rates $`\kappa_a`$ and changed-label mixing budgets $`h_a`$, write
 
-$$
+```math
 R=\sum_{a\in C}\frac{\kappa_a}{h_a}.
-$$
+```
 
 The project then proves
 
-$$
+```math
 e+r\geq\frac{\pi R}{4+8\pi R}.
-$$
+```
 
 This is supplied locally by applying the mixed-state crossing proof to the complete retained system. Adding noiseless work duplicates noise signatures; it does not create intermediate signatures. Allowing that work to remain mixed changes the final task.
 
-The further entropy consequence is also a project derivation. Forced joint purity loss is transferred to a bound on work purity when the data error is small, and then to entropy. With natural logarithms, the accurate-data regime $e=o(R)$ satisfies
+The further entropy consequence is also a project derivation. Forced joint purity loss is transferred to a bound on work purity when the data error is small, and then to entropy. With natural logarithms, the accurate-data regime $`e=o(R)`$ satisfies
 
-$$
+```math
 \liminf_{R\to0}
 \frac{S(W)}{R\ln(1/R)}\geq\frac{\pi}{4}.
-$$
+```
 
 The [workspace proof](../science/workspace.md) gives the finite inequalities and permits correlations between data and work. This is an entropy requirement after the stated initialized operation. Converting it into an erasure-work or heat cost requires a thermodynamic model.
 
 ### What the trajectory chapters add
 
-For the coherent repetition-correction example, each physical jump is $\sqrt{\gamma}Z_j$, so its squared amplitude operator is $\gamma I$. The total jump intensity for four qubits is therefore the state-independent value $4\gamma$. Over the gadget duration $T_g$, the jump count is Poisson with mean $\mu=4\gamma T_g$.
+For the coherent repetition-correction example, each physical jump is $`\sqrt{\gamma}Z_j`$, so its squared amplitude operator is $`\gamma I`$. The total jump intensity for four qubits is therefore the state-independent value $`4\gamma`$. Over the gadget duration $`T_g`$, the jump count is Poisson with mean $`\mu=4\gamma T_g`$.
 
 The circuit corrects the population effect of zero or one jump without using a measured record. Consequently,
 
-$$
+```math
 e_{\mathrm{data}}\leq\Pr(N\geq2)
 =1-e^{-\mu}(1+\mu).
-$$
+```
 
 Chapter 6 supplies the trajectory viewpoint; the circuit propagation and its correction property are proved locally in [Workspace, Section 4](../science/workspace.md#4-an-explicit-coherent-escape-from-a-data-only-linear-floor). The trajectory representation is bookkeeping for the unconditional channel, not permission for feedback or postselection.
 

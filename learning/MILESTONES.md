@@ -48,7 +48,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** background/preliminaries.
 - **Central question:** What does the population-transfer error measure, and which failures does it include?
-- **Understanding target:** Read $q=1-\langle t|\rho(T)|t\rangle$ as the probability of any outcome other than the desired basis state. Distinguish an incorrect logical bit, leakage to a helper level, and loss of coherence that a single basis-population measurement cannot detect.
+- **Understanding target:** Read $`q=1-\langle t|\rho(T)|t\rangle`$ as the probability of any outcome other than the desired basis state. Distinguish an incorrect logical bit, leakage to a helper level, and loss of coherence that a single basis-population measurement cannot detect.
 - **Dependencies and story role:** Uses M01. Gives the optimization a measurable objective before introducing control or noise.
 - **Conceptual connection:** Counting leakage prevents a successful-looking logical subspace projection from replacing the unconditional transfer task.
 - **Project sources:** [Transfer task](../science/model.md#dynamics-and-conventions); [logical channel and leakage weights](../science/constructions.md#6-logical-phase-transverse-and-leakage-weights).
@@ -78,7 +78,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** background/preliminaries.
 - **Central question:** Why does diagonal dephasing leave a basis state unchanged yet create population error during a gate?
-- **Understanding target:** Explain the decay of an off-diagonal matrix element under commuting Hermitian jumps and the invariance of populations under noise alone. Track the convention that $\kappa\mathcal D[Z]$ gives coherence decay rate $2\kappa$, and relate transient superposition to exposure during transfer.
+- **Understanding target:** Explain the decay of an off-diagonal matrix element under commuting Hermitian jumps and the invariance of populations under noise alone. Track the convention that $`\kappa\mathcal D[Z]`$ gives coherence decay rate $`2\kappa`$, and relate transient superposition to exposure during transfer.
 - **Dependencies and story role:** Uses M04. Identifies the physical mechanism whose minimum cost the project studies.
 - **Conceptual connection:** Stationary initial and final states do not imply a noise-free connecting control path.
 - **Project sources:** [Dephasing graph and rate convention](../science/model.md#the-dephasing-graph); [physical mechanism](../science/interpretation.md).
@@ -88,7 +88,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** background/preliminaries.
 - **Central question:** What physical information is encoded by the eigenvalues of the noise operators?
-- **Understanding target:** Associate each common eigenstate with its weighted noise signature and explain $Q_{ij}=\sum_a\gamma_a(\lambda_{ai}-\lambda_{aj})^2$ as twice a reference coherence-decay rate. Recognize when two states share a noise signature and why real scalar shifts and orthogonal mixing of the weighted Hermitian jumps do not change Q.
+- **Understanding target:** Associate each common eigenstate with its weighted noise signature and explain $`Q_{ij}=\sum_a\gamma_a(\lambda_{ai}-\lambda_{aj})^2`$ as twice a reference coherence-decay rate. Recognize when two states share a noise signature and why real scalar shifts and orthogonal mixing of the weighted Hermitian jumps do not change Q.
 - **Dependencies and story role:** Uses M05. Converts the microscopic noise model into a finite set of physically interpretable pair costs.
 - **Conceptual connection:** The graph used later is built from environmental distinguishability, rather than from spatial adjacency or available hopping terms.
 - **Project sources:** [The dephasing graph](../science/model.md#the-dephasing-graph); [inference from measured rates](../science/interpretation.md#what-can-be-inferred-from-measured-dephasing-rates).
@@ -118,7 +118,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** background/preliminaries.
 - **Central question:** Why can global purity constrain a noisy control path?
-- **Understanding target:** Interpret $\operatorname{Tr}\rho^2$, explain why Hamiltonian evolution preserves it, and understand its monotonic decrease under the specified unital noise. Connect the commutator $[L_a,\rho]$ to the exact purity-loss rate and explain why high final purity constrains every earlier state.
+- **Understanding target:** Interpret $`\mathrm{Tr}\rho^2`$, explain why Hamiltonian evolution preserves it, and understand its monotonic decrease under the specified unital noise. Connect the commutator $`[L_a,\rho]`$ to the exact purity-loss rate and explain why high final purity constrains every earlier state.
 - **Dependencies and story role:** Uses M03–M05. Introduces the noisy-state quantity that makes a duration-uniform proof possible.
 - **Conceptual connection:** The finite-noise argument measures irreversible mixing directly instead of assuming the noisy state stays close to its ideal trajectory.
 - **Project sources:** [Coherence and joint purity](../science/finite_noise.md#32-coherence-forced-by-high-joint-purity); [permitted additional noise](../science/finite_noise.md#7-weaker-sufficient-control-assumptions-and-additional-noise).
@@ -128,7 +128,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** background/preliminaries.
 - **Central question:** Why is the first-order error of an exact noiseless transfer an integrated noise variance?
-- **Understanding target:** Explain the interaction picture as a way to remove the intended unitary motion, and connect the first-order target-overlap loss to $\int\sum_a\gamma_a\operatorname{Var}(L_a)\,dt$. Identify the fixed finite protocol and duration assumptions behind the perturbation remainder.
+- **Understanding target:** Explain the interaction picture as a way to remove the intended unitary motion, and connect the first-order target-overlap loss to $`\int\sum_a\gamma_a\mathrm{Var}(L_a)\,dt`$. Identify the fixed finite protocol and duration assumptions behind the perturbation remainder.
 - **Dependencies and story role:** Uses M08–M09. Supplies the sensitivity functional that the geometric argument minimizes.
 - **Conceptual connection:** A state-dependent noise exposure becomes a scalar action along a controlled path, while the scope of the expansion remains explicit.
 - **Project sources:** [Fixed-protocol sensitivity](../science/geometry.md#1-first-order-error-of-a-fixed-exact-transfer); [weak-noise claim](../science/model.md#sharp-weak-noise-optimum).
@@ -180,7 +180,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** narrative/innovation.
 - **Central question:** How can a shortest-path distance supply a certificate that constrains every coherent trajectory?
-- **Understanding target:** Explain the truncated distance coordinate $u_i=\min\{d_Q(s,i),d_Q(s,t)\}$ and the inequality $|u_i-u_j|\leq Q_{ij}$. Understand how thresholds of that coordinate define binary observables that all separate the initial state from the target.
+- **Understanding target:** Explain the truncated distance coordinate $`u_i=\min\{d_Q(s,i),d_Q(s,t)\}`$ and the inequality $`|u_i-u_j|\leq Q_{ij}`$. Understand how thresholds of that coordinate define binary observables that all separate the initial state from the target.
 - **Dependencies and story role:** Uses M06, M12, and M14. Begins the proof with a local pairwise inequality and a finite family of necessary crossings.
 - **Conceptual connection:** The graph contributes a family of observables, rather than an assumption that physical motion follows a classical path.
 - **Project sources:** [Distance certificate](../science/geometry.md#2-a-certificate-from-graph-distances); [cut construction](../science/finite_noise.md#2-a-family-of-cuts-certified-by-the-noise-distance).
@@ -190,7 +190,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** narrative/innovation.
 - **Central question:** Why does every state pay at least the weighted exposure of the separating cuts?
-- **Understanding target:** Connect the decomposition of $|u_i-u_j|$ into threshold separations to the variance inequality for pure states and the commutator-norm inequality for mixed states. Distinguish this entrywise Dirichlet-form comparison from a claim that one Lindblad generator is another plus a completely positive remainder.
+- **Understanding target:** Connect the decomposition of $`|u_i-u_j|`$ into threshold separations to the variance inequality for pure states and the commutator-norm inequality for mixed states. Distinguish this entrywise Dirichlet-form comparison from a claim that one Lindblad generator is another plus a completely positive remainder.
 - **Dependencies and story role:** Uses M09–M10 and M15. Converts the local certificate into an inequality that applies along any allowed control path.
 - **Conceptual connection:** The same comparison links perturbative noise action to the exact purity-loss argument used later.
 - **Project sources:** [Pure and mixed cut comparison](../science/geometry.md#2-a-certificate-from-graph-distances); [finite-noise Dirichlet comparison](../science/finite_noise.md#2-a-family-of-cuts-certified-by-the-noise-distance).
@@ -200,7 +200,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** narrative/innovation.
 - **Central question:** Why must a bounded coherent change of a binary label accumulate a definite variance?
-- **Understanding target:** Connect the mixing-block speed bound to the integrated crossing cost $\pi/(4\Omega)$. Explain why nonmonotone motion and backtracking cannot lower it and why a maximal-strength two-level rotation attains it. Recognize the scalar result as an inherited ingredient with a specified normalization.
+- **Understanding target:** Connect the mixing-block speed bound to the integrated crossing cost $`\pi/(4\Omega)`$. Explain why nonmonotone motion and backtracking cannot lower it and why a maximal-strength two-level rotation attains it. Recognize the scalar result as an inherited ingredient with a specified normalization.
 - **Dependencies and story role:** Uses M07–M08, M10, and M15. Supplies the local dynamical cost that every certificate cut must pay.
 - **Conceptual connection:** A speed restriction becomes a noise-exposure restriction because a changing label must pass through states with nonzero variance.
 - **Project sources:** [Binary crossing proof](../science/geometry.md#3-the-binary-crossing-cost); [Lu et al. attribution](../references/RELATED_WORK.md#two-level-optimality-lu-et-al).
@@ -210,7 +210,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** narrative/innovation.
 - **Central question:** Why does the sum of cut costs equal an attainable shortest-path cost?
-- **Understanding target:** Combine M16 and M17 into the lower coefficient $\pi d_Q(s,t)/(16\Omega)$. Explain how successive maximal-strength pair rotations on a minimizing path attain the same coefficient, despite the converse allowing arbitrary many-level superpositions and interference.
+- **Understanding target:** Combine M16 and M17 into the lower coefficient $`\pi d_Q(s,t)/(16\Omega)`$. Explain how successive maximal-strength pair rotations on a minimizing path attain the same coefficient, despite the converse allowing arbitrary many-level superpositions and interference.
 - **Dependencies and story role:** Uses M10 and M15–M17. Integrates the local certificate and scalar crossing into the first global optimality statement.
 - **Conceptual connection:** A classical distance characterizes a quantum control optimum without restricting all optimal protocols to classical sequences.
 - **Project sources:** [Crossing sum](../science/geometry.md#3-the-binary-crossing-cost); [attaining path](../science/geometry.md#4-a-path-that-attains-the-lower-bound); [explicit transfer](../science/constructions.md#2-transfer-along-a-shortest-path).
@@ -220,7 +220,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** narrative/innovation.
 - **Central question:** What prevents a very long noisy protocol from evading the perturbative crossing argument?
-- **Understanding target:** Explain how high target success bounds final purity from below, how unitality transfers that constraint to earlier times, and how block coherence must then accompany each cut crossing. Understand the self-consistent error inequality and its extension to the complete domain $q\in[0,1]$.
+- **Understanding target:** Explain how high target success bounds final purity from below, how unitality transfers that constraint to earlier times, and how block coherence must then accompany each cut crossing. Understand the self-consistent error inequality and its extension to the complete domain $`q\in[0,1]`$.
 - **Dependencies and story role:** Uses M09, M14, and M16–M18. Replaces ideal-trajectory reasoning with a lower bound valid at arbitrary noise strength and duration.
 - **Conceptual connection:** The target's accuracy constrains the entire noisy history, giving a converse even for controls that are not exact when noise is switched off.
 - **Project sources:** [Mixed-state estimates](../science/finite_noise.md#3-two-block-estimates-for-a-mixed-state); [scalar integral](../science/finite_noise.md#4-the-scalar-crossing-integral); [assembled bound](../science/finite_noise.md#5-assemble-the-finite-noise-bound).
@@ -259,8 +259,8 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 ### M23: Spectral refinement and a controlled growing-dimension limit
 
 - **Phase:** narrative/innovation.
-- **Central question:** What is held fixed when refining a spectrum reduces population error as $1/m$?
-- **Understanding target:** Relate a fixed endpoint span split into m equal gaps to distance $\gamma\Delta^2/m$, helper count, and duration. Distinguish the fixed-m weak-noise expansion from the fixed-noise large-m limit justified by exact probabilities, and contrast both with a physical ladder whose noise span grows with m.
+- **Central question:** What is held fixed when refining a spectrum reduces population error as $`1/m`$?
+- **Understanding target:** Relate a fixed endpoint span split into m equal gaps to distance $`\gamma\Delta^2/m`$, helper count, and duration. Distinguish the fixed-m weak-noise expansion from the fixed-noise large-m limit justified by exact probabilities, and contrast both with a physical ladder whose noise span grows with m.
 - **Dependencies and story role:** Uses M14, M21, and M22. Converts the geometry classification into an asymptotic mechanism with explicit resource accounting.
 - **Conceptual connection:** Smaller noise differences on individual steps can outweigh a longer path for populations, but this comparison changes if the noise normalization changes.
 - **Project sources:** [Uniform refinement](../science/constructions.md#5-a-uniformly-refined-noise-spectrum); [fixed span versus physical ladder](../science/interpretation.md#fixed-span-and-a-fixed-physical-ladder); [normalized finite-spin example](../science/control_resources.md#5-a-finite-spin-model-with-its-normalization-explicit).
@@ -290,7 +290,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** narrative/innovation.
 - **Central question:** What remains unavoidable when arbitrary coherent workspace is included in the target state?
-- **Understanding target:** Explain the local mixing-budget parameter $R=\sum_a\kappa_a/h_a$ and the bound on joint pure-state return. Relate joint failure to data error plus work-return error, and identify the pure initialization, retained-work, and label-preserving unital-noise assumptions needed by the proof.
+- **Understanding target:** Explain the local mixing-budget parameter $`R=\sum_a\kappa_a/h_a`$ and the bound on joint pure-state return. Relate joint failure to data error plus work-return error, and identify the pure initialization, retained-work, and label-preserving unital-noise assumptions needed by the proof.
 - **Dependencies and story role:** Uses M03, M09, M19, and M25. Extends the converse to coherent controllers while keeping the measured output and resource boundary explicit.
 - **Conceptual connection:** Protecting data by moving uncertainty into a helper does not preserve the same complete pure target.
 - **Project sources:** [Local workspace model](../science/workspace.md#1-model-with-local-mixing-budgets); [full return theorem](../science/workspace.md#2-full-pure-state-return); [data and workspace errors](../science/workspace.md#separate-data-and-workspace-errors).
@@ -310,7 +310,7 @@ Every anchor pointer below links to the corresponding official chapter page, wit
 
 - **Phase:** narrative/innovation.
 - **Central question:** What quantitative uncertainty must remain in work when data population error is smaller than first order?
-- **Understanding target:** Connect the finite joint-purity loss, near-correct data output, and the work-marginal purity bound. Explain how majorization produces a dimension-independent entropy bound and why $e=o(R)$ forces at least a contribution proportional to $R\ln(1/R)$. Recognize the correction circuit's matching order and the limits on additive or thermodynamic interpretations.
+- **Understanding target:** Connect the finite joint-purity loss, near-correct data output, and the work-marginal purity bound. Explain how majorization produces a dimension-independent entropy bound and why $`e=o(R)`$ forces at least a contribution proportional to $`R\ln(1/R)`$. Recognize the correction circuit's matching order and the limits on additive or thermodynamic interpretations.
 - **Dependencies and story role:** Uses M03, M09, and M26–M27. Quantifies the resource used by the data-only escape without imposing pure work return.
 - **Conceptual connection:** The same irreversible mixing that obstructs joint return becomes a lower bound on retained syndrome uncertainty when the data is protected.
 - **Project sources:** [Finite work-entropy bound](../science/workspace.md#3-work-entropy-without-a-clean-return-requirement); [matching scaling example](../science/workspace.md#5-consistency-with-the-return-and-entropy-bounds); [correction and interpretation](../science/interpretation.md#how-correction-changes-the-conclusion).
