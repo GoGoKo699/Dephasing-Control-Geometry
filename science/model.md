@@ -130,7 +130,7 @@ d_Q(s,t)
 =\gamma\sum_{k}(\lambda_k-\lambda_{k-1})^2.
 ```
 
-A fixed span $\Delta$ divided into $m$ uniform gaps gives $d_Q=\gamma\Delta^2/m$. The optimal endpoint population error then has a sharp $1/m$ asymptotic even at fixed noise strength. The construction takes time $(2m-1)\pi/(2\Omega)$ and has increasing phase error. Exact probabilities and channel components are derived in [constructions](constructions.md).
+A fixed span $\Delta$ divided into $m$ uniform gaps gives $d_Q=\gamma\Delta^2/m$. The optimal endpoint population error then has a sharp $1/m$ asymptotic even at fixed noise strength. The construction takes time $(2m-1)\pi/(2\Omega)$, and its fixed-$m$ first-order phase-error coefficient grows with $m$. Exact probabilities, channel components and a separate fixed-noise coherence estimate are derived in [constructions](constructions.md).
 
 ### Retained and disposable workspace
 

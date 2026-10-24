@@ -4,7 +4,19 @@
 
 ## Entry point
 
-- [README](README.md): main result, reading route, resource boundaries, reproduction command and purpose.
+- [README](README.md): main result, science and learning routes, resource boundaries, reproduction command and purpose.
+
+## Routes by reader intention
+
+- Physical story: [learning introduction](learning/README.md), then [interpretation](science/interpretation.md). The three-level example explains why a longer route can reduce basis error while increasing phase error.
+- Study: [30-milestone map](learning/MILESTONES.md), supported by the [Breuer–Petruccione bridge](learning/BREUER_PETRUCCIONE_BRIDGE.md). The map has 14 background/preliminaries milestones and 16 narrative/innovation milestones. It is common to all readers.
+- Theorem and proof: [model](science/model.md), [geometry](science/geometry.md), [finite-noise proof](science/finite_noise.md), then the relevant construction or workspace result.
+- Reproduction: [verification guide](verification/README.md), its documented command and the stored analytic expectations.
+- Attribution: [related work](references/RELATED_WORK.md), then the linked primary sources and their stated access limits.
+
+## Single educational anchor
+
+Heinz-Peter Breuer and Francesco Petruccione, The Theory of Open Quantum Systems, Oxford University Press, 2007 paperback, ISBN 9780199213900. The [source bridge](learning/BREUER_PETRUCCIONE_BRIDGE.md) owns the verified chapter mapping, convention translations and locally supplied steps. Primary research citations are retained for attribution and proof dependencies; they do not add educational anchors.
 
 ## Authoritative scientific statements
 
@@ -31,7 +43,9 @@
 - The noise graph is a complete graph of costs, not automatically a hardware coupling graph. Restricted connectivity does not inherit an exact shortest-path optimality claim.
 - Population error includes leakage. Logical Choi weights are unconditioned. Single-logical-qubit Pauli coefficients are not the coefficients of the controlled gate.
 - Fixed-span spectral refinement and increasing an unnormalized noise spectrum are different comparisons. Refinement charges helper levels, control access, duration and phase error.
+- The growing phase-error expression is a fixed-dimension first-order coefficient. The fixed-noise, growing-ladder coherence statement has its own nonperturbative estimate in Constructions.
 - Joint pure-work return and data-only accuracy after retaining or discarding syndromes are different tasks. The workspace result is not a universal data-only error floor or an erasure-heat theorem.
+- The workspace entropy asymptotic requires data error e=o(R) as R tends to zero. Keep that condition with any entropy-order claim.
 - Numerical examples check formulas and conventions; they do not establish arbitrary-control optimality or exhaustive priority.
 
 ## Purpose and license

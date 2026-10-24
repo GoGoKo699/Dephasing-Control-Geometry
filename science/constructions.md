@@ -198,7 +198,56 @@ q_{\mathrm{bad}}=
 \tag{11}
 ```
 
-The finite-noise converse has the same leading term. This joint dimension-and-duration limit is therefore controlled for basis errors, even though the total duration grows. It does not preserve arbitrary phase coherence at fixed noise and arbitrarily large $m$.
+The finite-noise converse has the same leading term. This joint dimension-and-duration limit is therefore controlled for basis errors, even though the total duration grows. The following argument establishes the separate fate of phase coherence without extrapolating a fixed-dimension perturbation expansion.
+
+### Coherence at fixed noise as the ladder grows
+
+Assume $\theta=\epsilon\gamma\Delta^2/\Omega>0$ is fixed. Let $\mathcal E_{t,0}$ denote the actual channel up to time $t$, set $k=\lfloor m/2\rfloor$, and evolve the initial off-diagonal operator
+
+```math
+A(t)=\mathcal E_{t,0}(|0\rangle\langle m|).
+```
+
+During the first $k$ forward pulses, level $m$ is untouched and the other index can reach only levels $0,\ldots,k$. Therefore
+
+```math
+A(t)=\sum_{j=0}^{k}a_j(t)|j\rangle\langle m|,
+\qquad
+|\lambda_m-\lambda_j|\geq\Delta/2,
+\qquad 0\leq t\leq k\tau.
+```
+
+The Hamiltonian contribution preserves this operator's Hilbert–Schmidt norm. Diagonal dephasing gives the exact differential identity and estimate
+
+```math
+\frac{d}{dt}\|A(t)\|_2^2
+=-\epsilon\gamma\sum_{j=0}^{k}
+  (\lambda_m-\lambda_j)^2|a_j(t)|^2
+\leq-\frac{\epsilon\gamma\Delta^2}{4}\|A(t)\|_2^2.
+```
+
+Since $\|A(0)\|_2=1$, this implies $\|A(k\tau)\|_2\leq e^{-\epsilon\gamma\Delta^2 k\tau/8}$. Every subsequent propagator is unital and trace preserving. The Kadison–Schwarz inequality consequently makes it contractive in Hilbert–Schmidt norm for arbitrary operators, including $A$. Using the dimension $m+1$ and $\tau=\pi/(2\Omega)$,
+
+```math
+\boxed{
+\|\mathcal E_{T_X,0}(|0\rangle\langle m|)\|_1
+\leq\sqrt{m+1}\exp\!\left(-\frac{\pi\theta k}{16}\right)
+\longrightarrow0.
+}
+```
+
+This is an estimate on the actual noisy channel at fixed noise. Together with (11), it determines the limiting logical action. The two basis outputs approach their swapped pure targets, with trace-norm error at most $2\sqrt{q_{\mathrm{bad}}}$. For every state $\rho$ in the endpoint code,
+
+```math
+\left\|\mathcal E_{T_X,0}(\rho)
+-\left(\rho_{00}|m\rangle\langle m|
+       +\rho_{mm}|0\rangle\langle0|\right)\right\|_1
+\leq2\sqrt{q_{\mathrm{bad}}}
++\sqrt{m+1}\,e^{-\pi\theta k/16}
+\longrightarrow0.
+```
+
+Thus this sequence approaches the operation that dephases in the logical basis and then applies logical $X$. The vanishing truth error at fixed noise does not imply preservation of a logical superposition.
 
 ## 6. Logical phase, transverse, and leakage weights
 
@@ -263,7 +312,7 @@ The first-order ratio is
 \tag{13}
 ```
 
-at fixed $m$. Population errors decrease with refinement while the phase weight grows as $\pi\epsilon\gamma\Delta^2m/(12\Omega)$. Total gate fidelity is therefore a separate resource constraint.
+at fixed $m$. Population errors decrease with refinement while the leading phase-weight coefficient grows linearly with $m$, with first-order term $\pi\epsilon\gamma\Delta^2m/(12\Omega)$ at large $m$. This is a statement about the fixed-$m$ perturbative coefficient. Total gate fidelity is therefore a separate resource constraint.
 
 ## 7. A rigorous fixed total-channel-error budget
 

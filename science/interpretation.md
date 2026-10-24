@@ -27,7 +27,7 @@ v_e=(0,2),
 
 where the two coordinates already include the square roots of the reference rates. Then $Q_{ij}=\|v_i-v_j\|^2$.
 
-The direct endpoint edge has cost $4$. The route through $b$ has cost $5/4+5/4=5/2$, while the extra state $e$ gives no improvement. The optimal leading transfer error is therefore reduced by $37.5\%$ relative to the direct endpoint rotation at the same $\Omega$.
+The direct endpoint edge has cost $4$. The route through $b$ has cost $5/4+5/4=5/2$, while the extra state $e$ gives no improvement. The optimal leading transfer error is therefore reduced by 37.5% relative to the direct endpoint rotation at the same $\Omega$.
 
 This example uses two independent dephasing observables and is not restricted to points on a line. The [verification suite](../verification/README.md) compares exact Lindblad propagation, the analytic pulse-product formula, and the predicted leading coefficient. The same route can be used in the forward/back construction to swap the two logical endpoint states.
 
@@ -49,7 +49,7 @@ q_{\rm bad}
 
 at fixed $m$. It includes leakage as well as a wrong logical bit. The sequence uses $m+1$ levels and time $(2m-1)\pi/(2\Omega)$. Its phase-error weight grows as $\epsilon\gamma\Delta^2m/\Omega$ in the perturbative regime.
 
-The exact transfer probabilities establish the $1/m$ population-error asymptotic even when the dimension increases at fixed noise strength. The conclusion concerns basis populations. At fixed noise, an indefinitely long sequence eventually loses logical phase coherence.
+The exact transfer probabilities establish the $1/m$ population-error asymptotic even when the dimension increases at fixed noise strength. The conclusion concerns basis populations. At fixed positive noise, this ladder sequence loses logical phase coherence as $m\to\infty$; a separate [coherence estimate](constructions.md#coherence-at-fixed-noise-as-the-ladder-grows) establishes this limit without extrapolating a first-order probability.
 
 This is relevant to noise-biased computation because different error components can have different correction costs. It does not establish that a larger value of $m$ improves total gate fidelity or a fault-tolerant threshold. Such a conclusion requires an explicit code, circuit, phase-error budget and implementation model.
 
