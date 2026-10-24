@@ -1,0 +1,41 @@
+# Dephasing Control Geometry
+
+> Research account of optimal eigenstate transfer under fixed commuting Hermitian dephasing and bounded Hamiltonian spectral width, with explicit gate constructions and coherent-workspace resource bounds.
+
+## Entry point
+
+- [README](README.md): main result, reading route, resource boundaries, reproduction command and purpose.
+
+## Authoritative scientific statements
+
+- [Model](science/model.md): use this file for the exact dissipator normalization, error definition, control budget and theorem quantifiers.
+- [Geometry](science/geometry.md): shortest-path certificate, inherited binary crossing kernel, matching upper bound and special spectra.
+- [Finite-noise proof](science/finite_noise.md): converse for the actual mixed trajectory, valid for every finite duration and noise-dependent protocol.
+- [Constructions](science/constructions.md): phase-free selective pulses, exact success products, endpoint X and controlled X, logical Choi weights and full-channel budget.
+- [Control resources](science/control_resources.md): distinguish global spectral halfwidth from operator norm or per-term amplitude; state selective-access assumptions and charge dimension and duration.
+- [Workspace](science/workspace.md): local label-mixing budgets, joint return error, workspace entropy and a finite coherent repetition circuit.
+- [Interpretation](science/interpretation.md): physical examples and limits of spectral refinement.
+
+## Evidence and reproduction
+
+- [Related work](references/RELATED_WORK.md): precise attribution, nearest comparisons and source-access limits.
+- [Bibliography](references/references.bib): primary source identifiers.
+- [Verification guide](verification/README.md): deterministic finite-dimensional checks and their limits.
+- [Verification runner](verification/run_all.py): executable comparison with stored analytic expectations.
+- [Expected values](verification/expected_results.json): analytic reference values and tolerances.
+
+## Interpretation constraints
+
+- The squared noise-distance representation and the two-level scalar optimum are established prior results. Attribute them as specified in Related work.
+- The exact equality is the leading weak-noise optimum for a fixed finite model. The displayed finite-noise rational expression is a lower bound.
+- The noise graph is a complete graph of costs, not automatically a hardware coupling graph. Restricted connectivity does not inherit an exact shortest-path optimality claim.
+- Population error includes leakage. Logical Choi weights are unconditioned. Single-logical-qubit Pauli coefficients are not the coefficients of the controlled gate.
+- Fixed-span spectral refinement and increasing an unnormalized noise spectrum are different comparisons. Refinement charges helper levels, control access, duration and phase error.
+- Joint pure-work return and data-only accuracy after retaining or discarding syndromes are different tasks. The workspace result is not a universal data-only error floor or an erasure-heat theorem.
+- Numerical examples check formulas and conventions; they do not establish arbitrary-control optimality or exhaustive priority.
+
+## Purpose and license
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at gogoko699@gmail.com.
+
+- [License](LICENSE): MIT.
